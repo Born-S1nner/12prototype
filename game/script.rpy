@@ -1,21 +1,13 @@
-﻿# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-define e = Character("Eileen")
+﻿define e = Character("Eileen")
 define m = Character("Me", color="#c8c8ff")
-
-
-# The game starts here.
+define n = Character("Nami", color="c8ffc8")
 
 label start:
 
     scene bg room
+    with fade
 
     show eileen happy
-
-    # These display lines of dialogue.
 
     e "You've created a new Ren'Py game."
 
@@ -33,6 +25,16 @@ label start:
 
     e "Once you add a story, pictures, and music, you can release it to the world!"
 
-    # This ends the game.
+    show nani happy at right
+    with fade
+
+    n "How can we do that?"
+
+    hide nani happy
+
+    e "Just simply follow our documentation on our official website."
+
+    hide bg room
+    with dissolve
 
     return
