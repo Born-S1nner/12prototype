@@ -26,7 +26,6 @@ label start:
     e "Once you add a story, pictures, and music, you can release it to the world!"
 
     show nani happy at right
-    with fade
 
     n "How can we do that?"
 
@@ -34,7 +33,8 @@ label start:
 
     e "Just simply follow our documentation on our official website."
 
-    hide bg room
+    hide eileen happy
     with dissolve
 
+    ".:. Normal Ending"
     return
