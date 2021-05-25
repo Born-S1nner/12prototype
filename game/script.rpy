@@ -16,23 +16,26 @@ label start:
 
     m "Anyone there?"
     e "Hello stranger!"
+    m "WAAAHH!!!!"
 
     show eileen happy at left
     e "Welcome to Ren'Py server!"
+
+label choices:
     e "Is there anything you want to know?"
 
 menu:
     "Who are you?":
-    jump who
+        jump who
 
     "What is Ren'Py?":
-    jump what
+        jump what
 
 label who:
     hide stick furious
     show nani happy at right
 
-    n "It doesn't matter, we are not part of oyur reality to begin with."
+    n "It doesn't matter, we are not part of your reality to begin with."
 
     jump act_one
 
@@ -49,7 +52,7 @@ label act_one:
     e "Right! Let's get started on your tutorial"
 
     hide nani happy
-    hide eillen happy
+    hide eileen happy
 
     ".:. The End"
     return
