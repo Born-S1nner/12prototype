@@ -7,34 +7,49 @@ label start:
     scene bg room
     with fade
 
-    show eileen happy
-
-    e "You've created a new Ren'Py game."
-
-    hide eileen happy
+    m "Where am I..."
+    m "Who am I..."
+    m "Why am I here?"
 
     show stick furious
-    
-    m "Thanks for the heads up!"
+    with fade
 
-    m "What do I do next?"
+    m "Anyone there?"
+    e "Hello stranger!"
 
+    show eileen happy at left
+    e "Welcome to Ren'Py server!"
+    e "Is there anything you want to know?"
+
+menu:
+    "Who are you?":
+    jump who
+
+    "What is Ren'Py?":
+    jump what
+
+label who:
     hide stick furious
-
-    show eileen happy
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
     show nani happy at right
 
-    n "How can we do that?"
+    n "It doesn't matter, we are not part of oyur reality to begin with."
+
+    jump act_one
+
+label what:
+    hide stick furious
+    show nani happy at right
+
+    n "Ren'Py allows you to create your own space dimension and mold it to your will."
+
+    jump act_one
+    
+label act_one:
+
+    e "Right! Let's get started on your tutorial"
 
     hide nani happy
+    hide eillen happy
 
-    e "Just simply follow our documentation on our official website."
-
-    hide eileen happy
-    with dissolve
-
-    ".:. Normal Ending"
+    ".:. The End"
     return
