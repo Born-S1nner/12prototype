@@ -22,6 +22,7 @@ label start:
     e "Welcome to Ren'Py server!"
 
 label choices:
+    default learned = False
     e "Is there anything you want to know?"
 
 menu:
@@ -42,17 +43,25 @@ label who:
 label what:
     hide stick furious
     show nani happy at right
+    $ learned = True
 
     n "Ren'Py allows you to create your own space dimension and mold it to your will."
 
     jump act_one
     
 label act_one:
+    if learned:
+        e "Right! Let's get started on your tutorial"
 
-    e "Right! Let's get started on your tutorial"
+        hide nani happy
+        hide eileen happy
 
-    hide nani happy
-    hide eileen happy
+        ".:. Cool End"
+    else:
+        e "You have a lot to learn, lets get down to business!"
 
-    ".:. The End"
+        hide nani happy
+        hide eileen happy
+
+        ".:. Weeb End"
     return
