@@ -2,9 +2,12 @@
 define m = Character("Me", color="#c8c8ff")
 define n = Character("Nami", color="c8ffc8")
 
+define pushleft = PushMove()
+define pushright = PushMove()
+
 label start:
 
-    scene bg room
+    scene bg one
     with fade
 
     m "Where am I..."

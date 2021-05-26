@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 25: choice menuitem expects a non-empty block.
-    "Who are you?":
-                   ^
+File "game/script.rpy", line 5: expected expression
+    define pushleft =
+                     ^
+
+File "game/script.rpy", line 6: expected expression
+    define pushright = 
+                       ^
 
 Ren'Py Version: Ren'Py 7.4.4.1439
-Tue May 25 15:03:46 2021
+Wed May 26 13:09:22 2021
