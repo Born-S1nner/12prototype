@@ -1,0 +1,28 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 23, in script
+    with movinleft
+  File "game/script.rpy", line 23, in <module>
+    with movinleft
+NameError: name 'movinleft' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 23, in script
+    with movinleft
+  File "renpy/ast.py", line 1390, in execute
+    trans = renpy.python.py_eval(self.expr)
+  File "renpy/python.py", line 2249, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "renpy/python.py", line 2242, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 23, in <module>
+    with movinleft
+NameError: name 'movinleft' is not defined
+
+Windows-10-10.0.19041
+Ren'Py 7.4.4.1439
+12_prototype 1.1
+Wed May 26 16:53:01 2021

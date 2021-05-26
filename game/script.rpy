@@ -2,29 +2,28 @@
 define m = Character("Me", color="#c8c8ff")
 define n = Character("Nami", color="c8ffc8")
 
-define pushleft = PushMove()
-define pushright = PushMove()
-
 default learned = False
 default determined = False
 
 label start:
 
-    scene bg one
-    with fade
-
     m "Where am I..."
     m "Who am I..."
     m "Why am I here?"
 
+
+    scene bg one
+    with dissolve
     show stick furious
-    with fade
+    with dissolve
 
     m "Anyone there?"
-    e "Hello stranger!"
-    m "WAAAHH!!!!"
 
     show eileen happy at left
+    with moveinleft
+    e "Hello stranger!"
+    m "WAAAHH!!!!" with hpunch
+
     e "Welcome to Ren'Py server!"
     e "Is there anything you want to know?"
 
@@ -38,6 +37,7 @@ menu:
 label who:
     hide stick furious
     show nani happy at right
+    with moveinright
 
     n "It doesn't matter, we are not part of your reality to begin with."
 
@@ -46,6 +46,7 @@ label who:
 label what:
     hide stick furious
     show nani happy at right
+    with moveinright
     $ learned = True
 
     n "Ren'Py allows you to create your own space dimension and mold it to your will."
@@ -62,12 +63,14 @@ label act_one:
 
     hide nani happy
     hide eileen happy
+    with dissolve
 
 label act_two:
     scene bg two
-
+    with dissolve
+    
     show eileen happy
-    with fade
+    with moveinleft
     
     e "Over here, you got another realm like the previous one... "
     e "You can conquer as many realms as you're capable of."
@@ -87,6 +90,14 @@ label act_two:
     e "You should try it out right!"
     e "Let's give you some space and see if you can pull it out."
 
+    hide eileen happy
+    with moveoutleft
+
+    n "You got this."
+
+    hide nani happy
+    with moveoutright
+
 menu:
     "(attempt to make a realm)":
         jump failed
@@ -96,6 +107,7 @@ menu:
 
 label failed:
     scene empty
+    with fade
 
     show eileen happy
     
@@ -105,30 +117,34 @@ label failed:
     n "Don't be like that!"
     n "He is just not confident with his new power."
 
-    hide bg empty
     jump act_three
 
 label success:
     scene bg three
+    with fade
+
     $ determined = True
 
     show eileen happy
-    
+    with moveinleft
+
     e "Holy moly! He actually pulled it off at the first shot!"
     
     show nani happy at right
+    with moveinright
     n "You should have faith in him from the start."
     n "With this power, you must be responsible for your creations and actions."
     
-    hide bg three
-
     jump act_three
 
     
 label act_three:
     scene bg two
-    show nani happy at right
+    with pixellate
+    
     show eileen happy at left
+    show nani happy at right
+    
     if learned and determined:
         n "You are worthy to do good things for the multivers."
         n "Don't let anything stop you from doing the right choices in life."
