@@ -26,8 +26,6 @@ label start:
 
     show eileen happy at left
     e "Welcome to Ren'Py server!"
-
-label choices:
     e "Is there anything you want to know?"
 
 menu:
@@ -60,22 +58,24 @@ label act_one:
     else:
         e "You have a lot to learn, lets get down to business!"
 
-    hide nani happy and eileen happy
+    n "Let's head to another realm."
 
-    hide bg one
-    with dissolve
+    hide nani happy
+    hide eileen happy
 
 label act_two:
     scene bg two
 
     show eileen happy
+    with fade
+    
     e "Over here, you got another realm like the previous one... "
     e "You can conquer as many realms as you're capable of."
     
     hide eileen happy
     show stick furious
     
-    m "How are you able to even create somethin gout of nothing in the first place?"
+    m "How are you able to even create something out of nothing in the first place?"
     
     hide stick furious
     show nani happy
@@ -95,8 +95,6 @@ menu:
         jump success
 
 label failed:
-    hide bg two
-    with dissolve
     scene empty
 
     show eileen happy
@@ -111,8 +109,6 @@ label failed:
     jump act_three
 
 label success:
-    hide bg two
-    with dissolve
     scene bg three
     $ determined = True
 
@@ -131,16 +127,18 @@ label success:
     
 label act_three:
     scene bg two
+    show nani happy at right
+    show eileen happy at left
     if learned and determined:
         n "You are worthy to do good things for the multivers."
         n "Don't let anything stop you from doing the right choices in life."
     
-    elif learned and !determined:
+    elif learned and not determined:
         e "You have the brains but not the courage!"
         n "You should believe in yourself more."
         n "Good thing will happen if you set your mind on something."
 
-    elif !learned and determined:
+    elif not learned and determined:
         e "You got guts, yet you don't use your brain to think."
         n "What she is trying to say is you must be careful on what you wish for."
         n "Bad things will happen if you're closed minded from the reality."
@@ -149,7 +147,8 @@ label act_three:
         e "Boy you must not like yourself."
         e "I'm starting to think that you are not worthy of this power."
 
-    hide nani happy and eileen happy
+    hide nani happy
+    hide eileen happy
     show stick furious
 
     m "Can we take a break for a moment?"
