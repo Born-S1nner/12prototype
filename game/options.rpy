@@ -1,49 +1,17 @@
-﻿## This file contains options that can be changed to customize your game.
-##
-## Lines beginning with two '#' marks are comments, and you shouldn't uncomment
-## them. Lines beginning with a single '#' mark are commented-out code, and you
-## may want to uncomment them when appropriate.
+﻿define config.name = _("12_prototype")
 
+define gui.show_name = False
 
-## Basics ######################################################################
-
-## A human-readable name of the game. This is used to set the default window
-## title, and shows up in the interface and error reports.
-##
-## The _() surrounding the string marks it as eligible for translation.
-
-define config.name = _("12_prototype")
-
-
-## Determines if the title given above is shown on the main menu screen. Set
-## this to False to hide the title.
-
-define gui.show_name = True
-
-
-## The version of the game.
-
-define config.version = "1.0"
-
-
-## Text that is placed on the game's about screen. Place the text between the
-## triple-quotes, and leave a blank line between paragraphs.
+define config.version = "1.1"
 
 define gui.about = _p("""
+    Made by BornS1nner
+
+    Image is used by respected artists that retired
 """)
-
-
-## A short name for the game used for executables and directories in the built
-## distribution. This must be ASCII-only, and must not contain spaces, colons,
-## or semicolons.
 
 define build.name = "12_prototype"
 
-
-## Sounds and music ############################################################
-
-## These three variables control which mixers are shown to the player by
-## default. Setting one of these to False will hide the appropriate mixer.
 
 define config.has_sound = True
 define config.has_music = True
