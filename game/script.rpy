@@ -192,6 +192,6 @@ label act_four:
 
     e "You can travel at larger distance by using the train."
 
-    
+    n hap "In case you want some reference from the previous creators, you can use this station to explore them."    
 
 return
