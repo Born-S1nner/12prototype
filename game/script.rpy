@@ -1,7 +1,7 @@
 ﻿define e = Character("Eileen", image="eileen")
 define m = Character("Me", color="#c8c8ff")
 define n = Character("Nami", color="c8ffc8", image="nani")
-define h = Character("Hatsune", color="blue")
+define h = Character("Hatsune", color="00cc99")
 
 image define eileen happy = "eileen happy.png"
 image define nani happy = "nani happy.png"
@@ -189,9 +189,15 @@ label act_four:
     with dissolve
 
     e hap "Over here is the Realm Station."
-
     e "You can travel at larger distance by using the train."
-
     n hap "In case you want some reference from the previous creators, you can use this station to explore them."    
+    n "All you have to do is ask Hatsune the direction and she will guide you."
+    n "Isn't that right, Hatsune?"
+    h "It's true, but don't disturb me during my break hours."
+    m "Who exactly is she?"
+    h "Rude! I am the Hatsune of Pathfinder!" with hpunch
+    h "You better respect me or else I will send you to the abyss!"
+    n hap "Now now, it's rude to treat the newcomer like that."
+    e hap "Then again, she is always in an angry mood."
 
 return
