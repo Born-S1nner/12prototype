@@ -199,5 +199,11 @@ label act_four:
     h "You better respect me or else I will send you to the abyss!"
     n hap "Now now, it's rude to treat the newcomer like that."
     e hap "Then again, she is always in an angry mood."
+    n "let's just move on to the next point."
+    e "Bye Hatsune!"
+    h "..."
+    m "Sorry about the respond."
+    h "Don't even dare be sorry!"with hpunch
+    h "Just get out of here."
 
 return
