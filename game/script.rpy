@@ -1,13 +1,17 @@
 ﻿define e = Character("Eileen", image="eileen")
 define m = Character("Me", color="#c8c8ff")
 define n = Character("Nami", color="c8ffc8", image="nani")
-define h Character("Hatsune", color="blue")
+define h = Character("Hatsune", color="blue")
 
-image define eileen content = "side eileen happy.png"
-image define eileen content = "side nani happy.png"
+image define eileen happy = "eileen happy.png"
+image define nani happy = "nani happy.png"
+
+image define side eileen hap = "side eileen hap.png"
+image define nani eileen hap = "side nani hap.png"
 
 default learned = False
 default determined = False
+
 
 label start:
 
@@ -183,5 +187,11 @@ label act_three:
 label act_four:
     scene bg four
     with dissolve
+
+    e hap "Over here is the Realm Station."
+
+    e "You can travel at larger distance by using the train."
+
+    
 
 return
