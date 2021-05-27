@@ -1,6 +1,10 @@
-﻿define e = Character("Eileen")
+﻿define e = Character("Eileen", image="eileen")
 define m = Character("Me", color="#c8c8ff")
-define n = Character("Nami", color="c8ffc8")
+define n = Character("Nami", color="c8ffc8", image="nani")
+define h Character("Hatsune", color="blue")
+
+image define eileen content = "side eileen happy.png"
+image define eileen content = "side nani happy.png"
 
 default learned = False
 default determined = False
@@ -176,5 +180,8 @@ label act_three:
 
     hide nani happy
 
-    ".:. The End"
+label act_four:
+    scene bg four
+    with dissolve
+
 return
