@@ -11,7 +11,7 @@ image define nani eileen hap = "side nani hap.png"
 
 default learned = False
 default determined = False
-
+default respect = 0
 
 label start:
 
@@ -56,6 +56,7 @@ label what:
     show nani happy at right
     with moveinright
     $ learned = True
+    $ respect += 1
 
     n "Ren'Py allows you to create your own space dimension and mold it to your will."
 
@@ -130,7 +131,7 @@ label failed:
 label success:
     scene bg three
     with fade
-
+    $ respect += 1
     $ determined = True
 
     show eileen happy
@@ -194,14 +195,23 @@ label act_four:
     n "All you have to do is ask Hatsune the direction and she will guide you."
     n "Isn't that right, Hatsune?"
     h "It's true, but don't disturb me during my break hours."
-    m "Who exactly is she?"
+menu:
+    "Who exactly is she?":
+        jump rude
+    "What does she do in here?":
+        jump curious
+label rude:
     h "Rude! I am the Hatsune of Pathfinder!" with hpunch
     h "You better respect me or else I will send you to the abyss!"
+    jump act_five
+
+label act_five:
     n hap "Now now, it's rude to treat the newcomer like that."
-    e hap "Then again, she is always in an angry mood."
+    e hap "Then again, she is always a wild card."
     n "let's just move on to the next point."
     e "Bye Hatsune!"
     h "..."
+    
     m "Sorry about the respond."
     h "Don't even dare be sorry!"with hpunch
     h "Just get out of here."
