@@ -235,6 +235,7 @@ label apology:
     h "..."
     h "Just get out of here."
     h "..."
+    h "Baka"
 
 label act_six:
     show eileen happy at left
@@ -243,4 +244,11 @@ label act_six:
     with moveinright
     e "I guess that concludes today's tour."
     e "I'm gonna be honest with you..."
+    if respect == 3:
+        e "You are the perfect canidate to be the chosen one."
+    elif respect >= 1:
+        e "You have some things to work on before you become the chosen one."
+    else:
+        e "You are not qualify to be the chosen one."
+
 return
