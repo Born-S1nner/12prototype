@@ -237,5 +237,10 @@ label apology:
     h "..."
 
 label act_six:
-
+    show eileen happy at left
+    with moveinleft
+    show eileen happy at right
+    with moveinright
+    e "I guess that concludes today's tour."
+    e "I'm gonna be honest with you..."
 return
