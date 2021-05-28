@@ -145,8 +145,7 @@ label success:
     n "With this power, you must be responsible for your creations and actions."
     
     jump act_three
-
-    
+ 
 label act_three:
     scene bg two
     with pixellate
@@ -195,14 +194,25 @@ label act_four:
     n "All you have to do is ask Hatsune the direction and she will guide you."
     n "Isn't that right, Hatsune?"
     h "It's true, but don't disturb me during my break hours."
+
 menu:
     "Who exactly is she?":
         jump rude
     "What does she do in here?":
         jump curious
+
 label rude:
     h "Rude! I am the Hatsune of Pathfinder!" with hpunch
     h "You better respect me or else I will send you to the abyss!"
+    jump act_five
+
+label curious:
+    h "Well you simpleton, I am in charge of ensuring the pathway from life and death." with hpunch
+    if learned:
+        h "I expected much from you, smart boy."
+        h "I guess I shouldn't have mush expectation from you"
+    else:
+        h "Of course, You wouldn't understand about my job for you, small brain."
     jump act_five
 
 label act_five:
@@ -211,9 +221,21 @@ label act_five:
     n "let's just move on to the next point."
     e "Bye Hatsune!"
     h "..."
-    
+
+menu:
+    "Apologize to Hatsune":
+        jump apology
+    "Leave the room":
+        jump act_six
+
+label apology:
+    respect += 1
     m "Sorry about the respond."
-    h "Don't even dare be sorry!"with hpunch
+    h "Don't be!"with hpunch
+    h "..."
     h "Just get out of here."
+    h "..."
+
+label act_six:
 
 return
