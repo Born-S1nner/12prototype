@@ -210,7 +210,7 @@ label curious:
     h "Well you simpleton, I am in charge of ensuring the pathway from life and death." with hpunch
     if learned:
         h "I expected much from you, smart boy."
-        h "I guess I shouldn't have mush expectation from you"
+        h "I guess I shouldn't have put some expectation from you"
     else:
         h "Of course, You wouldn't understand about my job for you, small brain."
     jump act_five
@@ -229,7 +229,7 @@ menu:
         jump act_six
 
 label apology:
-    respect += 1
+    $ respect += 1
     m "Sorry about the respond."
     h "Don't be!"with hpunch
     h "..."
@@ -238,17 +238,40 @@ label apology:
     h "Baka"
 
 label act_six:
+    scene bg one
+    with fade
     show eileen happy at left
     with moveinleft
-    show eileen happy at right
+    show nani happy at right
     with moveinright
     e "I guess that concludes today's tour."
     e "I'm gonna be honest with you..."
     if respect == 3:
-        e "You are the perfect canidate to be the chosen one."
+        jump good_ending
     elif respect >= 1:
-        e "You have some things to work on before you become the chosen one."
+        jump normal_ending
     else:
-        e "You are not qualify to be the chosen one."
+        jump bad_ending
+
+label good_ending:
+    e "You are the perfect canidate to be the chosen one."
+    e "I'm gald that you were picked for this position."
+
+    jump end_credit
+
+label normal_ending:
+    e "You have some things to work on before you become the chosen one."
+    n ""
+
+    jump end_credit
+
+label bad_ending:
+    e "You are not qualify to be the chosen one."
+
+    jump end_credit
+
+label end_credit:
+    scene bg black
+    "The end"
 
 return

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 4: expected '=' not found.
-    define h Character("Hatsune", color="blue")
-             ^
+File "game/script.rpy", line 232: expected statement.
+    respect += 1
+            ^
 
 Ren'Py Version: Ren'Py 7.4.4.1439
-Thu May 27 19:17:26 2021
+Fri May 28 16:16:32 2021
