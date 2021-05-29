@@ -272,16 +272,22 @@ label bad_ending:
     e "You are not qualify to be the chosen one."
     n "I'm sorry..."
     n "Even if I can overlook your performance..."
-    n "You siply lack the traist require to be in this position."
+    n "You simply lack the traits required to be in this position."
     e "We'll send you back to where you came from."
-    e "You will not remember anything before you're memory wipe."
+    e "You will not remember anything before the memory wipe process."
     e "Good bye."
-    "Suddenly"
+    "Suddenly, you felt something sting behind your back" with hpunch
+    n "Good bye, nice knowing you."
 
     jump end_credit
 
 label end_credit:
     scene bg black
-    "The end"
+    if respect == 3:
+        "Good Ending"
+    elif respect >= 1:
+        "Normal Ending"
+    else:
+        "Bad Ending"
 
 return
