@@ -261,12 +261,22 @@ label good_ending:
 
 label normal_ending:
     e "You have some things to work on before you become the chosen one."
-    n ""
+    n "It's okay.. not everyone is pefect."
+    n "We just simply have to work with what we have."
+    e "Nami may go easy on you..."
+    e "But I'm going to do my best to turn you into the best creator ever!"
 
     jump end_credit
 
 label bad_ending:
     e "You are not qualify to be the chosen one."
+    n "I'm sorry..."
+    n "Even if I can overlook your performance..."
+    n "You siply lack the traist require to be in this position."
+    e "We'll send you back to where you came from."
+    e "You will not remember anything before you're memory wipe."
+    e "Good bye."
+    "Suddenly"
 
     jump end_credit
 
